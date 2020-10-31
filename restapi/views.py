@@ -1,9 +1,7 @@
 from django.shortcuts import render
-
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
- 
 from restapi.models import Api
 from restapi.serializers import ApiSerializer
 from rest_framework.decorators import api_view
@@ -59,6 +57,7 @@ def api_detail(request, pk):
     elif request.method == 'DELETE': 
         api.delete() 
         return JsonResponse({'message': 'Api was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
+
 @api_view(['GET'])
 def api_list_published(request):
      # GET all published apis
