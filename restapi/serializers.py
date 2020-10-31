@@ -2,7 +2,7 @@ from rest_framework import serializers
 from restapi.models import Api
  
  
-class TutorialSerializer(serializers.ModelSerializer):
+class ApiSerializer(serializers.ModelSerializer):
  
     class Meta:
         model = Api
